@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 620" width="880" height="620" role="img" aria-labelledby="title desc" lang="pt-BR">
+<title id="title">Como o parking-control processa um check-out</title>
+<desc id="desc">Um cliente (curl, Swagger UI ou qualquer frontend) envia uma requisição HTTP aos controllers REST, que a validam e devolvem erros no formato RFC 7807. Os serviços de domínio aplicam as regras do estacionamento, leem e atualizam vagas e sessões pelos repositórios Spring Data JPA (lock otimista e chave única de placa aberta impedem reserva dupla), que gravam no PostgreSQL 16 com migrações Flyway. No check-out o serviço pede o valor à função pura PriceCalculator (tolerância, primeira hora, frações iniciadas, teto diário) e o controller devolve JSON ao cliente. A especificação OpenAPI e o Swagger UI são gerados a partir dos controllers; os testes rodam o mesmo schema no H2 em modo PostgreSQL.</desc>
+<style>text{font-family:ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;fill:#e6edf3}.t{font-size:14px}.b{font-size:15px;font-weight:600}.h{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;fill:#8cb4ff}.m{font-size:12.5px;fill:#9198a1}.code{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;font-size:12.5px;fill:#79c0ff}.bg{fill:#0d1117;stroke:#30363d}.card{fill:#161b22;stroke:#3d444d}.zone{fill:#131c2e;stroke:#2d4a7a}.db{fill:#0f2419;stroke:#2e6b45}.dbt{fill:#56d364}.dash{fill:none;stroke:#3d444d;stroke-dasharray:5 4}.e{fill:none;stroke:#6e7681;stroke-width:1.5}.ed{fill:none;stroke:#6e7681;stroke-width:1.5;stroke-dasharray:4 4}.hl{fill:none;stroke:#fb923c;stroke-width:2.5;opacity:0}.dot{fill:#fb923c}.halo{fill:#fb923c;opacity:.25}.pk{opacity:0}@keyframes m0{0%,2.00%{transform:translate(120px,76px);opacity:0;animation-timing-function:ease-in-out}3.50%{opacity:1}12.00%{transform:translate(120px,144px);opacity:1}15.00%,100%{transform:translate(120px,144px);opacity:0}}@keyframes h0{0%,1.00%{opacity:0}3.00%,12.00%{opacity:.9}19.00%,100%{opacity:0}}.m0{animation:m0 9.0s linear infinite}.h0{animation:h0 9.0s linear infinite}@keyframes m1{0%,14.00%{transform:translate(120px,224px);opacity:0;animation-timing-function:ease-in-out}15.50%{opacity:1}22.00%{transform:translate(120px,272px);opacity:1}25.00%,100%{transform:translate(120px,272px);opacity:0}}@keyframes h1{0%,13.00%{opacity:0}15.00%,22.00%{opacity:.9}29.00%,100%{opacity:0}}.m1{animation:m1 9.0s linear infinite}.h1{animation:h1 9.0s linear infinite}@keyframes m2{0%,24.00%{transform:translate(120px,352px);opacity:0;animation-timing-function:ease-in-out}25.50%{opacity:1}32.00%{transform:translate(120px,400px);opacity:1}35.00%,100%{transform:translate(120px,400px);opacity:0}}@keyframes h2{0%,23.00%{opacity:0}25.00%,32.00%{opacity:.9}39.00%,100%{opacity:0}}.m2{animation:m2 9.0s linear infinite}.h2{animation:h2 9.0s linear infinite}@keyframes m3{0%,34.00%{transform:translate(120px,480px);opacity:0;animation-timing-function:ease-in-out}35.50%{opacity:1}44.00%{transform:translate(120px,540px);opacity:1}47.00%,100%{transform:translate(120px,540px);opacity:0}}@keyframes h3{0%,33.00%{opacity:0}35.00%,44.00%{opacity:.9}51.00%,100%{opacity:0}}.m3{animation:m3 9.0s linear infinite}.h3{animation:h3 9.0s linear infinite}@keyframes m4{0%,48.00%{transform:translate(392px,312px);opacity:0;animation-timing-function:ease-in-out}49.50%{opacity:1}58.00%{transform:translate(488px,312px);opacity:1}61.00%,100%{transform:translate(488px,312px);opacity:0}}@keyframes h4{0%,47.00%{opacity:0}49.00%,58.00%{opacity:.9}65.00%,100%{opacity:0}}.m4{animation:m4 9.0s linear infinite}.h4{animation:h4 9.0s linear infinite}@keyframes m5{0%,60.00%{transform:translate(488px,330px);opacity:0;animation-timing-function:ease-in-out}61.50%{opacity:1}68.00%{transform:translate(392px,330px);opacity:1}71.00%,100%{transform:translate(392px,330px);opacity:0}}@keyframes h5{0%,59.00%{opacity:0}61.00%,68.00%{opacity:.9}75.00%,100%{opacity:0}}.m5{animation:m5 9.0s linear infinite}.h5{animation:h5 9.0s linear infinite}@keyframes m6{0%,72.00%{transform:translate(360px,144px);opacity:0;animation-timing-function:ease-in-out}73.50%{opacity:1}84.00%{transform:translate(360px,76px);opacity:1}87.00%,100%{transform:translate(360px,76px);opacity:0}}@keyframes h6{0%,71.00%{opacity:0}73.00%,84.00%{opacity:.9}91.00%,100%{opacity:0}}.m6{animation:m6 9.0s linear infinite}.h6{animation:h6 9.0s linear infinite}@media (prefers-reduced-motion:reduce){.pk,.hl{animation:none;display:none}}</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6e7681"/></marker></defs>
+<rect x="0.5" y="0.5" width="879" height="619" rx="16" class="bg"/>
+<rect x="48" y="24" width="344" height="52" rx="26" class="card"/>
+<text x="220" y="55" text-anchor="middle"><tspan class="b">cliente</tspan><tspan class="m" dx="10">curl · Swagger UI · qualquer frontend</tspan></text>
+<rect x="24" y="108" width="832" height="396" rx="14" class="zone"/>
+<text x="44" y="132" class="h" text-anchor="start">Spring Boot 3 · Java 21</text>
+<rect x="48" y="144" width="344" height="80" rx="10" class="card"/>
+<text x="68" y="176" class="b" text-anchor="start">controllers REST</text>
+<text x="68" y="202" class="code" text-anchor="start">/api/v1 · Bean Validation · RFC 7807</text>
+<rect x="48" y="272" width="344" height="80" rx="10" class="card"/>
+<text x="68" y="304" class="b" text-anchor="start">serviços de domínio</text>
+<text x="68" y="330" class="m" text-anchor="start">entrada/saída · reservas · disponibilidade</text>
+<rect x="48" y="400" width="344" height="80" rx="10" class="card"/>
+<text x="68" y="432" class="b" text-anchor="start">Spring Data JPA</text>
+<text x="68" y="458" class="code" text-anchor="start">@Version · UNIQUE(placa) · lock de linha</text>
+<rect x="488" y="144" width="344" height="80" rx="10" class="dash"/>
+<text x="508" y="176" class="b" text-anchor="start">OpenAPI 3</text>
+<text x="508" y="202" class="m" text-anchor="start">Swagger UI em /swagger-ui.html</text>
+<rect x="488" y="264" width="344" height="96" rx="10" class="card"/>
+<text x="508" y="294" class="b" text-anchor="start">PriceCalculator</text>
+<text x="508" y="318" class="m" text-anchor="start">função pura, 19 testes unitários</text>
+<text x="508" y="340" class="m" text-anchor="start">tolerância · 1ª hora · frações · teto diário</text>
+<rect x="48" y="540" width="344" height="60" rx="10" class="db"/>
+<text x="68" y="575"><tspan class="b dbt">PostgreSQL 16</tspan><tspan class="m" dx="10">migrações Flyway</tspan></text>
+<rect x="488" y="540" width="344" height="60" rx="10" class="dash"/>
+<text x="508" y="575"><tspan class="b">testes</tspan><tspan class="m" dx="10">mesmo schema no H2 (modo PostgreSQL)</tspan></text>
+<path d="M120,76 V144" class="e" marker-end="url(#ah)"/>
+<path d="M360,144 V76" class="e" marker-end="url(#ah)"/>
+<path d="M120,224 V272" class="e" marker-end="url(#ah)"/>
+<path d="M120,352 V400" class="e" marker-end="url(#ah)"/>
+<path d="M120,480 V540" class="e" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<path d="M392,312 H488" class="e" marker-end="url(#ah)"/>
+<path d="M488,330 H392" class="e" marker-end="url(#ah)"/>
+<path d="M488,184 H392" class="ed" marker-start="url(#ah)"/>
+<text x="372" y="98" class="m" text-anchor="start">JSON · problem+json</text>
+<text x="132" y="98" class="code" text-anchor="start">POST /sessions/{id}/checkout</text>
+<text x="132" y="516" class="m" text-anchor="start">SQL</text>
+<text x="440" y="302" class="m" text-anchor="middle">calcula preço</text>
+<text x="440" y="176" class="m" text-anchor="middle">gerado de</text>
+<path d="M120,76 L120,144" class="hl h0"/>
+<g class="pk m0"><circle r="9" class="halo"/><circle r="4.5" class="dot"/></g>
+<path d="M120,224 L120,272" class="hl h1"/>
+<g class="pk m1"><circle r="9" class="halo"/><circle r="4.5" class="dot"/></g>
+<path d="M120,352 L120,400" class="hl h2"/>
+<g class="pk m2"><circle r="9" class="halo"/><circle r="4.5" class="dot"/></g>
+<path d="M120,480 L120,540" class="hl h3"/>
+<g class="pk m3"><circle r="9" class="halo"/><circle r="4.5" class="dot"/></g>
+<path d="M392,312 L488,312" class="hl h4"/>
+<g class="pk m4"><circle r="9" class="halo"/><circle r="4.5" class="dot"/></g>
+<path d="M488,330 L392,330" class="hl h5"/>
+<g class="pk m5"><circle r="9" class="halo"/><circle r="4.5" class="dot"/></g>
+<path d="M360,144 L360,76" class="hl h6"/>
+<g class="pk m6"><circle r="9" class="halo"/><circle r="4.5" class="dot"/></g>
+</svg>

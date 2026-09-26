@@ -1,0 +1,18 @@
+# gitleaks configuration: the default rules plus one for credentials in Spring config files,
+# which the default rules do not catch.
+[extend]
+useDefault = true
+
+[[rules]]
+id = "spring-datasource-password"
+description = "Hardcoded password in a Spring properties/YAML file"
+path = '''(?i)\.(properties|ya?ml)$'''
+regex = '''(?im)^\s*[\w.-]*password\s*[:=][ \t]*["']?([^\s"'$][^\s"']{3,})'''
+secretGroup = 1
+
+[allowlist]
+description = "Legacy commits pending a history rewrite; delete this block in the same step"
+commits = [
+  "5566905f6203ff34f913fa8729b0ae3cb4a331b8",
+  "8584d3490e0689b13b7ec91d43fe6210af69f8f3",
+]

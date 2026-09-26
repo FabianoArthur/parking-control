@@ -1,0 +1,28 @@
+# Build output
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.classpath
+.factorypath
+.project
+.settings/
+.apt_generated
+.springBeans
+.sts4-cache
+/nbproject/private/
+/nbbuild/
+/nbdist/
+
+# OS
+.DS_Store
