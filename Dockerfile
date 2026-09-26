@@ -10,7 +10,7 @@ RUN mvn -B -ntp -DskipTests -Dspotless.check.skip=true package \
  && java -Djarmode=tools -jar target/parking-control-*.jar extract --layers --launcher --destination /extracted
 
 # ---- runtime ----
-FROM eclipse-temurin:21-jre-alpine
+FROM eclipse-temurin:24-jre-alpine
 RUN addgroup -S app && adduser -S -G app app
 WORKDIR /app
 COPY --from=build /extracted/dependencies/ ./
